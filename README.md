@@ -27,6 +27,7 @@ Metronome({
 - ``type``: one of ``frame`` or ``duration``
 - ``draw``: callback that fires with each requestAnimationFrame call
 - ``complete``: calback that fires after the completion of the animation
+- ``easing``: one of the easing methods.  Default is 'easeInOutQuad'. See source for more easing options.
 
 Dependent on ``type``:
 
