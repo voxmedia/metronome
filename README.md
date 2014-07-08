@@ -58,11 +58,11 @@ Metronome({
 
 ```
 
-### Easing
+#### Easing
 
 This includes includes several basic easing equations.  Please see the source for the complete list of easing methods.
 
-### ``draw()`` and ``complete()``
+#### ``draw()`` and ``complete()``
 
 ``draw()`` is the main draw action that is called during the animation loop.  All side-effects of the animation shoudl be done in this method. 
 
@@ -70,7 +70,7 @@ The ``handle`` parameter is simply the requestAnimationFrame handle that JavaScr
 
 The ``progress`` paramter is a decimal percentage of the progress of the animation, starting from 0 and continuing to 1. In a frame based animation, progress percentage increases linearly.  In a duration based animation, there is no guarantee of linear progression, are momentary freezes or fps slowdowns may cause ``progress` to jump in order to catch up to where the progression should be given elapsed time and desired duration.
 
-### Options
+#### Options
 
 - ``type``: one of ``frame`` or ``duration``
 - ``draw``: callback that fires with each requestAnimationFrame call
