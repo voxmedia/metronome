@@ -5,20 +5,20 @@ A friendlier front-end to requestAnimationFrame-based animations.
 
 ## Documentation
 
-This library provides two main methods for animation via requestAnimationFrame: a frame based
-method, and a duratino based method.
+This library provides two main methods for animation via requestAnimationFrame: a frame-based
+method, and a duration-based method.
 
-### Frame based
+### Frame-Based Animations
 
-A frame based animation specifies an explicit number of frames that the animation should take.  The animation will use exactly that amount of frames, regardless of the specific framerate that the browser is currently running. 
+A frame-based animation specifies an explicit number of frames that the animation should take.  The animation will use exactly that quantity of frames, regardless of the specific framerate that the browser is currently running. 
 
 Advantages of this method include a visually smoother animation, as essentially no frames are "skipped".
 
-### Duration based
+### Duration-Based Animations
 
-A duration based animation specifies an exact amount of time (in milliseconds) that the animation should take.  In this scenario, regardless of the framerate of the browser, the animation will conclude in an exact amount of time.
+A duration-based animation specifies an exact amount of time (in milliseconds) that the animation should take.  In this scenario, regardless of the framerate of the browser, the animation will conclude in an exact amount of time.
 
-Advantages of this method include a chronologically more predictive process, essentially "skipping" frames in order to finish the animation in the time specified.  This is important if time based animations are chained together, or if the *quickness* of the animation is more important than the smoothness of an animation (such as a lightning bolt flash, for example).
+Advantages of this method include a chronologically more predictable process, essentially "skipping" frames in order to finish the animation in the time specified.  This is important if duration-based animations are chained together, or if the *quickness* of the animation is more important than the smoothness of an animation (such as a lightning bolt flash, for example).
 
 #### Usage
 
