@@ -7,10 +7,8 @@
   // requestAnimationFrame polyfill by Erik Möller.
   // Fixes from Paul Irish, Tino Zijdel, Andrew Mao, Klemen Slavič, Darius Bacon
 
-  if (!Date.now) {
-    Date.now = function() { return new Date().getTime(); };
-  }
-
+  var dateNow = Date.now || function() { return new Date().getTime(); };
+  
   (function() {
     var vendors = ['webkit', 'moz'];
     for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
@@ -23,7 +21,7 @@
         || !window.requestAnimationFrame || !window.cancelAnimationFrame) {
       var lastTime = 0;
       window.requestAnimationFrame = function(callback) {
-        var now = Date.now();
+        var now = dateNow();
         var nextTime = Math.max(lastTime + 16, now);
         return setTimeout(function() { callback(lastTime = nextTime); },
                           nextTime - now);
@@ -97,14 +95,14 @@
 
   var animate_duration = function(options) {
     var handle = 0;
-    var initial_ts = Date.now();
+    var initial_ts = dateNow();
     var progress = 0;
     var max_duration = options.duration;
     var callback = options.draw || noop;
     var complete = options.complete || noop;
     var easing = Easing[options.easing || 'easeInOutQuad'];
     var progress_method = function() {
-      return Math.min(1, easing((Date.now() - initial_ts)/max_duration));
+      return Math.min(1, easing((dateNow() - initial_ts)/max_duration));
     };
 
     var draw = function() {
